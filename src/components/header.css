@@ -1,0 +1,56 @@
+@import "../index.css";
+
+.app-bar {
+	width: 100%;
+  background-color: #fff !important;
+  padding: 0;
+	position: sticky;
+	z-index: 1000;
+}
+
+.tool-bar {
+  padding: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem !important;
+	flex-direction: row;
+}
+
+.logo-header {
+  width: 150px;
+  object-fit: cover;
+}
+
+.search-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px var(--main-color) !important;
+  border-radius: 20px;
+  min-width: 300px;
+  padding-right: 10px;
+}
+
+.input-search {
+  font-size: 1.2rem !important;
+  color: var(--main-color) !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.search-icon {
+  color: var(--main-color) !important;
+}
+
+.container-login {
+	min-width: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--main-color);
+}
+
+.profile-icon {
+  width: 40px !important;
+  height: 40px !important;
+}
