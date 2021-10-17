@@ -1,11 +1,12 @@
 @import "../index.css";
 
 .app-bar {
-	width: 100%;
+  position: sticky !important;
+  width: 100%;
   background-color: #fff !important;
   padding: 0;
-	position: sticky;
-	z-index: 1000;
+  position: sticky;
+  z-index: 1000;
 }
 
 .tool-bar {
@@ -14,11 +15,18 @@
   justify-content: space-between;
   align-items: center;
   padding-right: 1rem !important;
-	flex-direction: row;
+  flex-direction: row;
+}
+.link-logo {
+	display: flex;
+  width: 150px !important;
+  height: 100% !important;
+	justify-content: center;
+	align-items: center;
 }
 
 .logo-header {
-  width: 150px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -36,6 +44,7 @@
   font-size: 1.2rem !important;
   color: var(--main-color) !important;
   padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
 }
 
 .search-icon {
@@ -43,7 +52,7 @@
 }
 
 .container-login {
-	min-width: 120px;
+  min-width: 120px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -53,4 +62,79 @@
 .profile-icon {
   width: 40px !important;
   height: 40px !important;
+}
+
+.menu-icon {
+  display: none !important;
+}
+
+.menu-button {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .search-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block !important;
+  }
+
+  .menu-icon {
+    display: block !important;
+    color: var(--main-color) !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .tool-bar {
+    padding-left: 1rem !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .tool-bar {
+    padding: 0 0.5rem !important;
+  }
+
+  .logo-header {
+    width: 100px;
+    object-fit: cover;
+  }
+
+  .container-login {
+    align-items: center;
+    justify-content: end;
+    min-width: 0px !important;
+  }
+
+  .container-login h3 {
+    display: none;
+  }
+
+  .menu-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .profile-icon {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+.menu-list-button {
+  width: 100%;
+  display: block !important;
+}
+
+.menu-item {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  font-weight: 600 !important;
+}
+
+.menu-drawer {
+  margin-top: 2rem !important;
 }
