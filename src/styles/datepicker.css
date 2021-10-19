@@ -7,30 +7,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+	z-index: 50;
 }
-
-.dates {
-  width: 100%;
-}
-
-.dates-button {
-  display: block !important;
-  width: 100%;
-  color: var(--main-color) !important;
-  transition: 0.3s !important;
-}
-
-.dates-button:hover {
-  color: #fff !important;
-  background-color: var(--main-color) !important;
-}
-
 .input-guest {
+	width: 332px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #1d2429 !important;
+	background-color: #fff !important;
 }
 
 .input-guest-number {
@@ -69,7 +55,6 @@
     width: 100% !important;
     justify-content: center;
     align-items: center;
-    min-width: 0px !important;
     margin: 0 !important;
     padding: 0 !important;
 		min-width: 280px !important;
@@ -88,6 +73,12 @@
 
 	.rdrMonthAndYearWrapper {
 		padding: 0 !important;
+	}
+
+	.input-guest {
+		width: 100%;
+		min-width: 280px !important;
+
 	}
 }
 

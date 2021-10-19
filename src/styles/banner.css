@@ -1,0 +1,46 @@
+@import "../index.css";
+
+.container-banner {
+  height: 50vh;
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.container-info {
+  background-color: var(--main-color);
+  color: #fff;
+  width: 350px;
+  padding: 1rem;
+}
+
+.container-info h2 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.container-info button {
+  background-color: #fff;
+  color: var(--main-color);
+  text-transform: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.container-info button:hover {
+  background-color: var(--accent-color) !important;
+  color: #fff !important;
+}
+
+@media (max-width: 450px) {
+  .container-info {
+    width: 200px;
+  }
+
+  .container-info h2 {
+		font-size: 2rem;
+  }
+}

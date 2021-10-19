@@ -21,16 +21,13 @@ const Home = () => {
                 : () => setVisibleDate(true)
             }
           >
-            <h3>Search Dates</h3>
+            {visibleDate ? <h3>Hide</h3> : <h3>Search Dates</h3>}
           </Button>
           {visibleDate && <DatePicker />}
         </div>
         <Banner />
         <section className="room-card-container">
-          <RoomCard />
-          <RoomCard />
-          <RoomCard />
-          <RoomCard />
+          {/* <RoomCard src={} title={} description={}/> */}
         </section>
       </div>
     </>
