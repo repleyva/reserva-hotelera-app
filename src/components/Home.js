@@ -2,6 +2,7 @@ import { Button, CssBaseline } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import "../styles/home.css";
+import mockData from "../utils/mockData";
 import Banner from "./Banner";
 import DatePicker from "./DatePicker";
 import RoomCard from "./RoomCard";
@@ -26,8 +27,16 @@ const Home = () => {
           {visibleDate && <DatePicker />}
         </div>
         <Banner />
+				<hr/>
         <section className="room-card-container">
-          {/* <RoomCard src={} title={} description={}/> */}
+          {mockData.map((data, key) => (
+            <RoomCard
+              key={key}
+              src={data.src}
+              title={data.title}
+              description={data.description}
+            />
+          ))}
         </section>
       </div>
     </>
