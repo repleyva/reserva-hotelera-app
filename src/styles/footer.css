@@ -1,0 +1,12 @@
+.footer-container {
+	border-top: 1px solid #ccc;
+  padding: 2rem 0;
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+	background: #fff;
+}
+
+.footer-container h6 {
+  font-style: normal;
+}
