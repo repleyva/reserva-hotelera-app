@@ -2,7 +2,8 @@ import { HighlightOffTwoTone } from "@mui/icons-material";
 import { Chip, Slider } from "@mui/material";
 import React from "react";
 import "../styles/searchpage.css";
-import { chips } from "../utils/mockData";
+import mockData, { chips } from "../utils/mockData";
+import Results from "./Results";
 
 const SearchPage = () => {
   return (
@@ -22,7 +23,7 @@ const SearchPage = () => {
         })}
       </div>
       <div className="selector">
-			<h4>Prices</h4>
+        <h4>Prices</h4>
         <Slider
           className="slider"
           min={100}
@@ -30,6 +31,20 @@ const SearchPage = () => {
           valueLabelDisplay="auto"
           size="small"
         />
+      </div>
+      <div className="results-container">
+        {mockData
+          .filter((data) => data.cat === "room")
+          .map((room, index) => (
+            <Results
+              key={index}
+              title={room.title}
+              src={room.src}
+              description={room.description}
+              price={room.price}
+              stock={room.stock}
+            />
+          ))}
       </div>
     </div>
   );
