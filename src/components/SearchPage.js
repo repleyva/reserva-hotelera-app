@@ -1,12 +1,17 @@
 import { HighlightOffTwoTone } from "@mui/icons-material";
 import { Chip, Slider } from "@mui/material";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectEnd } from "../features/endSlice";
+import { selectStart } from "../features/startSlice";
 import "../styles/searchpage.css";
 import mockData, { chips } from "../utils/mockData";
 import Results from "./Results";
 
 const SearchPage = () => {
   const [value, setValue] = useState(400);
+  const start = useSelector(selectStart);
+  const end = useSelector(selectEnd);
   const handleChange = (e, newValue) => {
     setValue(newValue);
   };
@@ -40,8 +45,20 @@ const SearchPage = () => {
       </div>
       <div className="results-container">
         {mockData
+          .sort((a, b) => {
+            if (a.price > b.price) {
+              return -1;
+            }
+            if (a.price < b.price) {
+              return 1;
+            }
+          })
           .filter((data) => data.cat === "room")
           .filter((data) => data.price < value)
+          .filter(
+            (data) =>
+              end < data.notAvailablestart || start > data.notAvailableend
+          )
           .map((room, index) => (
             <Results
               key={index}

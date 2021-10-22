@@ -5,14 +5,35 @@ import { DateRangePicker } from "react-date-range";
 import { Button, InputBase } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { selectStart, setStart } from "../features/startSlice";
+import { selectEnd, setEnd } from "../features/endSlice";
+import { useState } from "react";
 
 const DatePicker = () => {
+  const start = useSelector(selectStart);
+  const end = useSelector(selectEnd);
+  const dispatch = useDispatch();
+  const [startChange, setStartChange] = useState(start);
+  const [endChange, setEndChange] = useState(end);
+
   const selectionRange = {
-    startDate: new Date(2021, 3, 10),
-    endDate: new Date(2021, 3, 15),
+    startDate: startChange,
+    endDate: endChange,
     key: "selection",
   };
-  const handleSelect = () => {};
+
+  const handleSelect = (ranges) => {
+    setStartChange(ranges.selection.startDate);
+    setEndChange(ranges.selection.endDate.getTime());
+
+    /* console.log(ranges.selection.startDate.getTime());
+    console.log(ranges.selection.endDate.getTime()); */
+
+    dispatch(setStart(ranges.selection.startDate.getTime()));
+    dispatch(setEnd(ranges.selection.endDate.getTime()));
+		// console.log(start, end);
+  };
   return (
     <div className="date-container">
       <DateRangePicker
