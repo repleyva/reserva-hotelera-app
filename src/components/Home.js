@@ -2,7 +2,7 @@ import { Button, CssBaseline } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import "../styles/home.css";
-import mockData from "../utils/mockData";
+import mockData from "../mockData";
 import Banner from "./Banner";
 import DatePicker from "./DatePicker";
 import RoomCard from "./RoomCard";

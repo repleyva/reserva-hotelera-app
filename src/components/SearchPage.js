@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { selectEnd } from "../features/endSlice";
 import { selectStart } from "../features/startSlice";
 import "../styles/searchpage.css";
-import mockData, { chips } from "../utils/mockData";
+import mockData, { chips } from "../mockData";
 import Results from "./Results";
 
 const SearchPage = () => {
